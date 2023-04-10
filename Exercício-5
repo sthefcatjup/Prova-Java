@@ -1,0 +1,35 @@
+public class Temperaturas {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String[] meses = {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+                          "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
+
+        double[] temperaturas = new double[12];
+
+        for (int i = 0; i < temperaturas.length; i++) {
+            System.out.printf("Digite a temperatura média de %s: ", meses[i]);
+            temperaturas[i] = sc.nextDouble();
+        }
+
+        double menorTemperatura = temperaturas[0];
+        double maiorTemperatura = temperaturas[0];
+        int mesMenorTemperatura = 1;
+        int mesMaiorTemperatura = 1;
+
+        for (int i = 1; i < temperaturas.length; i++) {
+            if (temperaturas[i] < menorTemperatura) {
+                menorTemperatura = temperaturas[i];
+                mesMenorTemperatura = i + 1;
+            } else if (temperaturas[i] > maiorTemperatura) {
+                maiorTemperatura = temperaturas[i];
+                mesMaiorTemperatura = i + 1;
+            }
+        }
+
+        System.out.printf("A menor temperatura do ano foi %.1f°C em %s.\n", menorTemperatura, meses[mesMenorTemperatura-1]);
+        System.out.printf("A maior temperatura do ano foi %.1f°C em %s.\n", maiorTemperatura, meses[mesMaiorTemperatura-1]);
+
+        sc.close();
+    }
+}
