@@ -1,0 +1,28 @@
+public class Investimentos {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite o tipo de investimento (Poupança ou Renda Fixa): ");
+        String tipoInvestimento = sc.nextLine();
+
+        System.out.print("Digite o valor do investimento: ");
+        double valorInvestimento = sc.nextDouble();
+
+        double taxaCorrecao;
+
+        if (tipoInvestimento.equalsIgnoreCase("Poupança")) {
+            taxaCorrecao = 0.03;
+        } else if (tipoInvestimento.equalsIgnoreCase("Renda Fixa")) {
+            taxaCorrecao = 0.04;
+        } else {
+            System.out.println("Tipo de investimento inválido.");
+            return;
+        } 
+        
+        double valorCorrigido = valorInvestimento * (1 + taxaCorrecao);
+
+        System.out.printf("Valor corrigido: R$ %.2f\n", valorCorrigido);
+
+        sc.close();
+    }
+}
