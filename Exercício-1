@@ -1,0 +1,9 @@
+public class Main {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    System.out.print("Digite um número: ");
+    double numero = input.nextDouble();
+    double quadrado = Math.pow(numero, 2);
+    System.out.printf("O quadrado de %.2f é %.2f", numero, quadrado);
+  }
+}
